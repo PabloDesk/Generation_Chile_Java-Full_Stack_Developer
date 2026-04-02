@@ -281,3 +281,7 @@ Por eso es importante:
 - nombrar bien las variables
 - saber qué tipo de dato estás usando
 - evitar depender demasiado de conversiones automáticas.
+
+---
+
+>*fuente: https://righteous-baron-17e.notion.site/Variables-y-Tipos-de-Datos-31e4db47a2558169a498cedf72c324e6*
