@@ -1,7 +1,5 @@
 # Tipado en Programación
 
----
-
 ## Fuerte vs Débil — Estático vs Dinámico
 
 <aside>
@@ -298,4 +296,6 @@ Esto hace el código:
 
 🧱 Código claro siempre es mejor que código “mágico”.
 
+---
 
+>*fuente: https://righteous-baron-17e.notion.site/Tipado-en-Programaci-n-31e4db47a255811fb8c0f71bf395ae23*
