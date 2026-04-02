@@ -1,7 +1,5 @@
 # Lógica de Programación
 
----
-
 # 🎯 **Propósito del módulo**
 
 <aside>
@@ -366,3 +364,7 @@ El lenguaje es solo una herramienta.
 - 🧱 *Construye primero la estructura, luego el código.*
 - 🤝 *Usa el pseudocódigo para comunicar ideas.*
 - 🚀 *Un algoritmo bien pensado vale más que mil líneas mal escritas.*
+
+---
+
+>*fuente: https://righteous-baron-17e.notion.site/L-gica-de-Programaci-n-31e4db47a25581b5b938f152f9e477f7*
