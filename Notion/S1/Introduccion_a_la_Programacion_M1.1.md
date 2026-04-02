@@ -307,3 +307,4 @@ _start:
 - “Primero la lógica, después el código.”
 - “Los errores son mensajes de aprendizaje.”
 
+*fuente: https://righteous-baron-17e.notion.site/Introducci-n-a-la-Programaci-n-31e4db47a2558006870dd1db0ce75430*
