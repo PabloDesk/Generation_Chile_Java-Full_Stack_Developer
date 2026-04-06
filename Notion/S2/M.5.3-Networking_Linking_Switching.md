@@ -1,0 +1,143 @@
+# 🌐 Networking: Linking & Switching
+
+
+## 🎯 Objetivo
+
+<aside>
+
+Entender cómo se comunican los sistemas entre sí y por qué **todo lo que haces como developer depende de la red**.
+
+</aside>
+
+---
+
+## 🧠 ¿Qué es Networking?
+
+Networking es la comunicación entre dispositivos.
+
+👉 Permite que:
+
+- Tu frontend hable con tu backend
+- Tu backend hable con la base de datos
+- Tu app consuma APIs externas
+
+---
+
+## 🔗 Linking (Conexión)
+
+### 💡 ¿Qué es?
+
+Es la forma en que los dispositivos se conectan a la red.
+
+---
+
+### 📡 Tipos de conexión
+
+| Tipo | Ejemplo | Característica |
+| --- | --- | --- |
+| 🔌 Cable (Ethernet) | PC conectado | Estable, rápido |
+| 📶 WiFi | Laptop / celular | Flexible, menos estable |
+
+---
+
+### ⚡ Conceptos clave
+
+- **Latencia** → tiempo que tarda en viajar la información
+- **Ancho de banda** → cantidad de datos que puedes enviar
+
+---
+
+### 🔥 Traducción al mundo developer
+
+- Request HTTP → necesita conexión
+- API → necesita red
+- Base de datos → necesita conexión
+
+---
+
+## 🔀 Switching (Red interna)
+
+### 💡 ¿Qué es?
+
+Permite que los dispositivos dentro de una misma red se comuniquen.
+
+---
+
+### 🧩 Componentes clave
+
+| Dispositivo | Función |
+| --- | --- |
+| 🔀 Switch | Conecta dispositivos dentro de una red |
+| 🌐 Router | Conecta tu red con internet |
+
+---
+
+## 🧠 Analogía clave (MUY IMPORTANTE)
+
+| Elemento | Analogía |
+| --- | --- |
+| Switch | Oficina interna |
+| Router | Puerta de salida a internet |
+
+---
+
+## 🌍 Flujo real de una petición
+
+Cuando haces:
+
+```jsx
+fetch("https://api.github.com")
+```
+
+Sucede esto:
+
+1. Tu computador envía la solicitud
+2. Pasa por el router
+3. Sale a internet
+4. Llega al servidor
+5. El servidor responde
+6. La respuesta vuelve a tu app
+
+---
+
+## 🔄 Flujo visual
+
+```mermaid
+flowchart LR
+Cliente --> Router
+Router --> Internet
+Internet --> Servidor
+Servidor --> Internet
+Internet --> Router
+Router --> Cliente
+```
+
+---
+
+## 🔥 Traducción al mundo developer
+
+- Frontend → Backend (API REST)
+- Backend → Base de datos
+- Microservicios → red interna
+- Cloud → TODO es red
+
+---
+
+## ⚠️ Problemas reales (MUY comunes)
+
+- “Mi API no responde” → problema de red
+- “Funciona en local pero no en producción” → networking
+- “Timeout” → latencia
+- “Error de conexión” → linking
+
+---
+
+## 🧠 Concepto clave final
+
+👉 **El 80% de los problemas en sistemas distribuidos son de red, no de código**
+
+(No es una cifra exacta universal; es una regla práctica ampliamente usada en ingeniería para enfatizar la importancia del networking. Si se requiere precisión formal: No puedo confirmar un porcentaje exacto verificable.)
+
+---
+
+>*fuente: https://righteous-baron-17e.notion.site/Networking-Linking-Switching-3294db47a25580f896dfea1e40496547*
