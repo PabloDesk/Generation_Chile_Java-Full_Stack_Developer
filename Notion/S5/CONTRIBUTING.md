@@ -1,4 +1,4 @@
-# [CONTRIBUTING.md](http://contributing.md/) 🤝 
+# 🤝 [CONTRIBUTING.md](http://contributing.md/)
 
 # 📌 ¿Qué es este archivo?
 
