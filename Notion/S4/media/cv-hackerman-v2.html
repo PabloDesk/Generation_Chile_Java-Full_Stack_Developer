@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV — Aleksei "Hackerman" Volkov</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    body          { font-family: 'JetBrains Mono', monospace; background-color: #0d1117; }
+    h1,h2,h3,h4,h5 { font-family: 'Syne', sans-serif; }
+    .accent       { color: #00e5ff; }
+    .border-accent{ border-color: #00e5ff !important; }
+    .text-mono    { font-family: 'JetBrains Mono', monospace; }
+    .hover-card:hover { border-color: #00e5ff !important; transition: border-color .2s; }
+    .lang-fill    { height: 3px; background: linear-gradient(90deg,#00e5ff,#00ff88); }
+  </style>
+</head>
+<body class="text-light py-4 py-lg-5">
+<div class="container" style="max-width:960px">
+
+  <!-- ══ HEADER ══ -->
+  <div class="border border-secondary border-start border-4 border-start-0 ps-0 mb-4 rounded-0 bg-dark p-4"
+       style="border-left: 3px solid #00e5ff !important;">
+    <div class="d-flex flex-wrap align-items-start justify-content-between gap-3">
+      <div>
+        <span class="badge bg-success bg-opacity-10 border border-success text-success text-uppercase small mb-2 d-inline-flex align-items-center gap-1">
+          <i class="bi bi-circle-fill" style="font-size:.4rem"></i> Disponible para proyectos
+        </span>
+        <h1 class="display-5 fw-bold mb-1">
+          Aleksei <span class="accent">"Hackerman"</span> Volkov
+        </h1>
+        <p class="text-secondary text-uppercase small tracking-wide mb-3">
+          // Senior Cybersecurity Engineer &amp; Ethical Hacker
+        </p>
+        <div class="d-flex flex-wrap gap-3 small text-secondary">
+          <span><i class="bi bi-envelope me-1"></i>a.volkov@hackerman.dev</span>
+          <span><i class="bi bi-globe me-1"></i>hackerman.dev</span>
+          <span><i class="bi bi-github me-1"></i>github.com/xhackerman</span>
+          <span><i class="bi bi-geo-alt me-1"></i>Tallinn, Estonia / Remote</span>
+        </div>
+      </div>
+
+      <!-- Stats rápidos -->
+      <div class="d-flex gap-2 flex-wrap">
+        <div class="text-center px-3 py-2 border border-secondary rounded-0 bg-black bg-opacity-50">
+          <div class="fs-4 fw-bold accent">9+</div>
+          <div class="text-secondary" style="font-size:.65rem;letter-spacing:.1em">AÑOS EXP.</div>
+        </div>
+        <div class="text-center px-3 py-2 border border-secondary rounded-0 bg-black bg-opacity-50">
+          <div class="fs-4 fw-bold accent">14</div>
+          <div class="text-secondary" style="font-size:.65rem;letter-spacing:.1em">CTF GANADOS</div>
+        </div>
+        <div class="text-center px-3 py-2 border border-secondary rounded-0 bg-black bg-opacity-50">
+          <div class="fs-4 fw-bold accent">4</div>
+          <div class="text-secondary" style="font-size:.65rem;letter-spacing:.1em">CVEs PUBL.</div>
+        </div>
+        <div class="text-center px-3 py-2 border border-secondary rounded-0 bg-black bg-opacity-50">
+          <div class="fs-4 fw-bold accent">80+</div>
+          <div class="text-secondary" style="font-size:.65rem;letter-spacing:.1em">AUDITORÍAS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4">
+
+    <!-- ══ COLUMNA PRINCIPAL ══ -->
+    <div class="col-lg-8">
+
+      <!-- PERFIL -->
+      <div class="bg-dark border border-secondary p-4 mb-4">
+        <h6 class="text-uppercase small accent mb-3 d-flex align-items-center gap-2">
+          <i class="bi bi-terminal-fill"></i> Perfil
+          <span class="flex-fill border-bottom border-secondary ms-2"></span>
+        </h6>
+        <p class="text-secondary mb-0 small lh-lg">
+          Especialista en seguridad ofensiva con <strong class="text-light">+9 años de experiencia</strong> en pentesting,
+          ingeniería inversa y arquitectura de sistemas seguros. He auditado infraestructuras críticas para organizaciones
+          en Europa, LATAM y Asia. Defiendo la filosofía <strong class="accent">"hack to protect"</strong>: entender al
+          adversario para anticipar cada vector de ataque. Ganador de <strong class="text-light">14 CTF internacionales</strong>
+          y contribuidor activo en programas de bug bounty de Fortune 500.
+        </p>
+      </div>
+
+      <!-- EXPERIENCIA -->
+      <div class="bg-dark border border-secondary p-4 mb-4">
+        <h6 class="text-uppercase small accent mb-3 d-flex align-items-center gap-2">
+          <i class="bi bi-briefcase-fill"></i> Experiencia
+          <span class="flex-fill border-bottom border-secondary ms-2"></span>
+        </h6>
+
+        <!-- Card 1 -->
+        <div class="border border-secondary p-3 mb-3 hover-card">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-1 mb-1">
+            <h6 class="fw-bold mb-0 text-light">Lead Red Team Engineer</h6>
+            <span class="badge bg-black border border-secondary text-secondary small">Mar 2021 — Presente</span>
+          </div>
+          <p class="accent small mb-2">NullSec Labs — Tallinn, Estonia</p>
+          <p class="text-secondary small mb-2">
+            Lideré operaciones de red team full-scope para 30+ clientes enterprise. Desarrollé frameworks de simulación
+            APT a medida, reduciendo el tiempo de detección medio del cliente en un 62%. Responsable de formación interna
+            en exploit development y threat modeling.
+          </p>
+          <div class="d-flex flex-wrap gap-1">
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">Red Team</span>
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">APT Simulation</span>
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">C2 Frameworks</span>
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">Cobalt Strike</span>
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">Active Directory</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="border border-secondary p-3 mb-3 hover-card">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-1 mb-1">
+            <h6 class="fw-bold mb-0 text-light">Senior Penetration Tester</h6>
+            <span class="badge bg-black border border-secondary text-secondary small">Jun 2018 — Feb 2021</span>
+          </div>
+          <p class="accent small mb-2">CipherCore Security — Berlín, Alemania</p>
+          <p class="text-secondary small mb-2">
+            Realicé evaluaciones de seguridad en aplicaciones web, infraestructuras cloud y entornos ICS/SCADA.
+            Descubrí 4 CVEs críticos publicados. Automaticé pipelines de reporte con Python, ahorrando ~18 hrs/semana.
+          </p>
+          <div class="d-flex flex-wrap gap-1">
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">Web AppSec</span>
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">SCADA</span>
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">AWS</span>
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">CVE Research</span>
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">Python</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="border border-secondary p-3 hover-card">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-1 mb-1">
+            <h6 class="fw-bold mb-0 text-light">Security Analyst</h6>
+            <span class="badge bg-black border border-secondary text-secondary small">Ago 2015 — May 2018</span>
+          </div>
+          <p class="accent small mb-2">ByteShield Inc. — Helsinki, Finlandia</p>
+          <p class="text-secondary small mb-2">
+            Monitoreo y respuesta a incidentes en SOC Nivel 3. Implementé reglas SIEM personalizadas que redujeron
+            falsos positivos en un 40%. Desarrollé playbooks de ransomware adoptados por 3 organizaciones financieras.
+          </p>
+          <div class="d-flex flex-wrap gap-1">
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">SOC L3</span>
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">SIEM</span>
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">Incident Response</span>
+            <span class="badge bg-info bg-opacity-10 border border-info text-info">Splunk</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CERTIFICACIONES -->
+      <div class="bg-dark border border-secondary p-4">
+        <h6 class="text-uppercase small accent mb-3 d-flex align-items-center gap-2">
+          <i class="bi bi-shield-check"></i> Certificaciones
+          <span class="flex-fill border-bottom border-secondary ms-2"></span>
+        </h6>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-transparent border-secondary d-flex align-items-center gap-3 px-0 py-2">
+            <span class="p-2 border border-secondary text-info"><i class="bi bi-award-fill"></i></span>
+            <div>
+              <div class="fw-semibold text-light small">OSCP — Offensive Security Certified Professional</div>
+              <div class="text-secondary" style="font-size:.72rem">Offensive Security · 2019 · Renovado 2023</div>
+            </div>
+          </li>
+          <li class="list-group-item bg-transparent border-secondary d-flex align-items-center gap-3 px-0 py-2">
+            <span class="p-2 border border-secondary text-info"><i class="bi bi-award-fill"></i></span>
+            <div>
+              <div class="fw-semibold text-light small">GXPN — GIAC Exploit Researcher &amp; Advanced Penetration Tester</div>
+              <div class="text-secondary" style="font-size:.72rem">GIAC / SANS Institute · 2021</div>
+            </div>
+          </li>
+          <li class="list-group-item bg-transparent border-secondary d-flex align-items-center gap-3 px-0 py-2">
+            <span class="p-2 border border-secondary text-info"><i class="bi bi-award-fill"></i></span>
+            <div>
+              <div class="fw-semibold text-light small">CEH Master — Certified Ethical Hacker</div>
+              <div class="text-secondary" style="font-size:.72rem">EC-Council · 2017 · Renovado 2022</div>
+            </div>
+          </li>
+          <li class="list-group-item bg-transparent border-bottom-0 d-flex align-items-center gap-3 px-0 pt-2 pb-0">
+            <span class="p-2 border border-secondary text-info"><i class="bi bi-award-fill"></i></span>
+            <div>
+              <div class="fw-semibold text-light small">CKS — Certified Kubernetes Security Specialist</div>
+              <div class="text-secondary" style="font-size:.72rem">CNCF · 2022</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ══ SIDEBAR ══ -->
+    <div class="col-lg-4 d-flex flex-column gap-4">
+
+      <!-- SKILLS -->
+      <div class="bg-dark border border-secondary p-4">
+        <h6 class="text-uppercase small accent mb-3 d-flex align-items-center gap-2">
+          <i class="bi bi-cpu-fill"></i> Skills
+          <span class="flex-fill border-bottom border-secondary ms-2"></span>
+        </h6>
+
+        <p class="text-secondary text-uppercase mb-1" style="font-size:.65rem;letter-spacing:.1em">Ofensiva</p>
+        <div class="d-flex flex-wrap gap-1 mb-3">
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Exploit Dev</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Buffer Overflow</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Privilege Esc.</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Lateral Movement</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Phishing Avanzado</span>
+        </div>
+
+        <p class="text-secondary text-uppercase mb-1" style="font-size:.65rem;letter-spacing:.1em">Herramientas</p>
+        <div class="d-flex flex-wrap gap-1 mb-3">
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Metasploit</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Burp Suite Pro</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Cobalt Strike</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Ghidra</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Nmap</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">BloodHound</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Wireshark</span>
+        </div>
+
+        <p class="text-secondary text-uppercase mb-1" style="font-size:.65rem;letter-spacing:.1em">Dev & Scripting</p>
+        <div class="d-flex flex-wrap gap-1">
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Python</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Rust</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">C / C++</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Bash</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">PowerShell</span>
+          <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light fw-normal">Go</span>
+        </div>
+      </div>
+
+      <!-- EDUCACIÓN -->
+      <div class="bg-dark border border-secondary p-4">
+        <h6 class="text-uppercase small accent mb-3 d-flex align-items-center gap-2">
+          <i class="bi bi-mortarboard-fill"></i> Educación
+          <span class="flex-fill border-bottom border-secondary ms-2"></span>
+        </h6>
+
+        <div class="mb-3">
+          <div class="fw-semibold text-light small">M.Sc. Seguridad Informática</div>
+          <div class="accent" style="font-size:.75rem">Universidad Técnica de Tallin (TalTech)</div>
+          <div class="text-secondary" style="font-size:.7rem">2013 — 2015</div>
+        </div>
+        <div>
+          <div class="fw-semibold text-light small">B.Sc. Ingeniería de Sistemas</div>
+          <div class="accent" style="font-size:.75rem">Universidad Estatal de Moscú</div>
+          <div class="text-secondary" style="font-size:.7rem">2009 — 2013</div>
+        </div>
+      </div>
+
+      <!-- IDIOMAS -->
+      <div class="bg-dark border border-secondary p-4">
+        <h6 class="text-uppercase small accent mb-3 d-flex align-items-center gap-2">
+          <i class="bi bi-translate"></i> Idiomas
+          <span class="flex-fill border-bottom border-secondary ms-2"></span>
+        </h6>
+
+        <div class="mb-3">
+          <div class="d-flex justify-content-between small mb-1">
+            <span class="text-light">Ruso</span><span class="text-secondary">Nativo</span>
+          </div>
+          <div class="bg-secondary bg-opacity-25" style="height:3px">
+            <div class="lang-fill" style="width:100%"></div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="d-flex justify-content-between small mb-1">
+            <span class="text-light">Inglés</span><span class="text-secondary">C2 — Proficient</span>
+          </div>
+          <div class="bg-secondary bg-opacity-25" style="height:3px">
+            <div class="lang-fill" style="width:95%"></div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="d-flex justify-content-between small mb-1">
+            <span class="text-light">Alemán</span><span class="text-secondary">B2 — Upper Intermediate</span>
+          </div>
+          <div class="bg-secondary bg-opacity-25" style="height:3px">
+            <div class="lang-fill" style="width:65%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="d-flex justify-content-between small mb-1">
+            <span class="text-light">Estonio</span><span class="text-secondary">A2 — Básico</span>
+          </div>
+          <div class="bg-secondary bg-opacity-25" style="height:3px">
+            <div class="lang-fill" style="width:30%"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <p class="text-center text-secondary mt-4 mb-0" style="font-size:.68rem;letter-spacing:.08em">
+    <span class="accent">></span> CV generado en 2025 · Todos los datos son ficticios <span class="accent">_</span>
+  </p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
