@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV — Aleksei "Hackerman" Volkov</title>
+
+  <!-- Bootstrap 5.3.8 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"/>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --bg:          #0a0c10;
+      --surface:     #111318;
+      --surface-2:   #181b22;
+      --border:      #1e2230;
+      --accent:      #00e5ff;
+      --accent-dim:  rgba(0, 229, 255, 0.08);
+      --accent-glow: rgba(0, 229, 255, 0.25);
+      --text:        #e2e8f0;
+      --muted:       #64748b;
+      --green:       #00ff88;
+      --mono:        'JetBrains Mono', monospace;
+      --sans:        'Syne', sans-serif;
+    }
+
+    /* ── reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: .875rem;
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── animated grid bg ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── scan line overlay ── */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,.08) 2px,
+        rgba(0,0,0,.08) 4px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .cv-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* ── HEADER ── */
+    .cv-header {
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      background: var(--surface);
+      padding: 2.5rem 2.5rem 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cv-header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cv-header .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: var(--mono);
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(0,255,136,.08);
+      border: 1px solid rgba(0,255,136,.25);
+      padding: .25rem .7rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge-status .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: .4; transform: scale(.7); }
+    }
+
+    .cv-name {
+      font-family: var(--sans);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.02em;
+      line-height: 1.1;
+      margin: 0 0 .3rem;
+    }
+
+    .cv-name span { color: var(--accent); }
+
+    .cv-title {
+      font-family: var(--mono);
+      font-size: .85rem;
+      color: var(--muted);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .cv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem 1.5rem;
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    .cv-contact a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .cv-contact a:hover { color: var(--accent); }
+
+    .cv-contact .bi { font-size: .85rem; margin-right: .3rem; }
+
+    /* ── SECTION ── */
+    .cv-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .cv-section::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent), transparent);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: .65rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border), transparent);
+    }
+
+    /* ── EXPERIENCE CARD ── */
+    .exp-card {
+      padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      margin-bottom: 1rem;
+      position: relative;
+      transition: border-color .25s, background .25s;
+    }
+
+    .exp-card:last-child { margin-bottom: 0; }
+
+    .exp-card:hover {
+      border-color: rgba(0,229,255,.3);
+      background: rgba(0,229,255,.03);
+    }
+
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      left: -1px; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity .25s;
+    }
+
+    .exp-card:hover::before { opacity: 1; }
+
+    .exp-role {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: .15rem;
+    }
+
+    .exp-company {
+      font-size: .78rem;
+      color: var(--accent);
+      margin-bottom: .2rem;
+    }
+
+    .exp-period {
+      font-size: .7rem;
+      color: var(--muted);
+      letter-spacing: .06em;
+      margin-bottom: .75rem;
+    }
+
+    .exp-desc {
+      font-size: .8rem;
+      color: #94a3b8;
+      margin: 0;
+    }
+
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      margin-top: .75rem;
+    }
+
+    .tag {
+      font-size: .65rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid rgba(0,229,255,.2);
+      padding: .15rem .55rem;
+    }
+
+    /* ── SKILLS GRID ── */
+    .skill-group-title {
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .6rem;
+    }
+
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .73rem;
+      color: #cbd5e1;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: .3rem .75rem;
+      margin: .25rem .2rem .25rem 0;
+      transition: border-color .2s, color .2s;
+    }
+
+    .skill-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── CERTIFICATIONS ── */
+    .cert-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: .9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cert-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .cert-icon {
+      width: 36px; height: 36px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(0,229,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .cert-name {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: .85rem;
+      color: #fff;
+    }
+
+    .cert-org {
+      font-size: .73rem;
+      color: var(--muted);
+    }
+
+    /* ── EDUCATION ── */
+    .edu-item {
+      padding: .75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .edu-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .edu-degree {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: .95rem;
+      color: #fff;
+    }
+
+    .edu-school {
+      font-size: .78rem;
+      color: var(--accent);
+    }
+
+    .edu-year {
+      font-size: .7rem;
+      color: var(--muted);
+    }
+
+    /* ── ABOUT ── */
+    .about-text {
+      font-size: .83rem;
+      color: #94a3b8;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .about-text strong { color: var(--accent); font-weight: 600; }
+
+    /* ── SIDEBAR STATS ── */
+    .stat-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 1rem 1.25rem;
+      text-align: center;
+      transition: border-color .25s;
+    }
+
+    .stat-box:hover { border-color: rgba(0,229,255,.35); }
+
+    .stat-val {
+      font-family: var(--sans);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stat-lbl {
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: .3rem;
+    }
+
+    /* ── LANGUAGE BAR ── */
+    .lang-bar-bg {
+      height: 3px;
+      background: var(--border);
+      margin-top: .35rem;
+    }
+
+    .lang-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--green));
+    }
+
+    .lang-name {
+      font-size: .78rem;
+      color: #cbd5e1;
+    }
+
+    .lang-level {
+      font-size: .68rem;
+      color: var(--muted);
+    }
+
+    /* ── FOOTER ── */
+    .cv-footer {
+      text-align: center;
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      margin-top: 2.5rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .cv-header { padding: 1.75rem 1.25rem 1.5rem; }
+      .cv-section { padding: 1.25rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cv-wrapper">
+
+  <!-- ══════════ HEADER ══════════ -->
+  <header class="cv-header">
+    <div class="badge-status"><span class="dot"></span> Disponible para nuevos proyectos</div>
+    <h1 class="cv-name">Aleksei <span>"Hackerman"</span> Volkov</h1>
+    <p class="cv-title">// Senior Cybersecurity Engineer &amp; Ethical Hacker</p>
+    <div class="cv-contact">
+      <span><i class="bi bi-envelope"></i><a href="#">a.volkov@hackerman.dev</a></span>
+      <span><i class="bi bi-globe"></i><a href="#">hackerman.dev</a></span>
+      <span><i class="bi bi-github"></i><a href="#">github.com/xhackerman</a></span>
+      <span><i class="bi bi-geo-alt"></i>Tallinn, Estonia / Remote</span>
+      <span><i class="bi bi-telephone"></i>+372 6XX XXX</span>
+    </div>
+  </header>
+
+  <div class="row g-4">
+
+    <!-- ══════════ COLUMNA PRINCIPAL ══════════ -->
+    <div class="col-lg-8">
+
+      <!-- ABOUT -->
+      <div class="cv-section">
+        <div class="section-label"><i class="bi bi-terminal-fill"></i> Perfil</div>
+        <p class="about-text">
+          Especialista en seguridad ofensiva con <strong>+9 años de experiencia</strong> en pentesting, ingeniería inversa
+          y arquitectura de sistemas seguros. He auditado infraestructuras críticas para organizaciones en Europa,
+          LATAM y Asia. Defiendo la filosofía <strong>"hack to protect"</strong>: entender al adversario para
+          anticipar cada vector de ataque. Certificado por OSCP, CEH y GXPN. Ganador de <strong>14 CTF internacionales</strong>
+          y contribuidor activo en programas de bug bounty de Fortune 500.
+        </p>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="cv-section">
+        <div class="section-label"><i class="bi bi-briefcase-fill"></i> Experiencia</div>
+
+        <div class="exp-card">
+          <div class="exp-role">Lead Red Team Engineer</div>
+          <div class="exp-company">NullSec Labs — Tallinn, Estonia</div>
+          <div class="exp-period">Mar 2021 — Presente</div>
+          <p class="exp-desc">Lideré operaciones de red team full-scope para 30+ clientes enterprise. Desarrollé frameworks
+            de simulación APT a medida, reduciendo el tiempo de detección medio del cliente en un 62%. Responsable de
+            formación interna en exploit development y threat modeling.</p>
+          <div class="exp-tags">
+            <span class="tag">Red Team</span>
+            <span class="tag">APT Simulation</span>
+            <span class="tag">C2 Frameworks</span>
+            <span class="tag">Cobalt Strike</span>
+            <span class="tag">Active Directory</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-role">Senior Penetration Tester</div>
+          <div class="exp-company">CipherCore Security — Berlín, Alemania</div>
+          <div class="exp-period">Jun 2018 — Feb 2021</div>
+          <p class="exp-desc">Realicé evaluaciones de seguridad en aplicaciones web, infraestructuras cloud y entornos
+            ICS/SCADA. Descubrí 4 CVEs críticos publicados. Automaticé pipelines de reporte con Python, ahorrando
+            ~18 hrs/semana al equipo.</p>
+          <div class="exp-tags">
+            <span class="tag">Web AppSec</span>
+            <span class="tag">SCADA</span>
+            <span class="tag">AWS</span>
+            <span class="tag">CVE Research</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-role">Security Analyst</div>
+          <div class="exp-company">ByteShield Inc. — Helsinki, Finlandia</div>
+          <div class="exp-period">Ago 2015 — May 2018</div>
+          <p class="exp-desc">Monitoreo y respuesta a incidentes en SOC Nivel 3. Implementé reglas SIEM personalizadas
+            que redujeron falsos positivos en un 40%. Desarrollé playbooks de respuesta ante ransomware adoptados
+            por 3 organizaciones del sector financiero.</p>
+          <div class="exp-tags">
+            <span class="tag">SOC L3</span>
+            <span class="tag">SIEM</span>
+            <span class="tag">Incident Response</span>
+            <span class="tag">Splunk</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="cv-section">
+        <div class="section-label"><i class="bi bi-shield-check"></i> Certificaciones</div>
+
+        <div class="cert-item">
+          <div class="cert-icon"><i class="bi bi-award-fill"></i></div>
+          <div>
+            <div class="cert-name">OSCP — Offensive Security Certified Professional</div>
+            <div class="cert-org">Offensive Security · 2019 · Renovado 2023</div>
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-icon"><i class="bi bi-award-fill"></i></div>
+          <div>
+            <div class="cert-name">GXPN — GIAC Exploit Researcher &amp; Advanced Penetration Tester</div>
+            <div class="cert-org">GIAC / SANS Institute · 2021</div>
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-icon"><i class="bi bi-award-fill"></i></div>
+          <div>
+            <div class="cert-name">CEH Master — Certified Ethical Hacker</div>
+            <div class="cert-org">EC-Council · 2017 · Renovado 2022</div>
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-icon"><i class="bi bi-award-fill"></i></div>
+          <div>
+            <div class="cert-name">CKS — Certified Kubernetes Security Specialist</div>
+            <div class="cert-org">Cloud Native Computing Foundation · 2022</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ══════════ COLUMNA LATERAL ══════════ -->
+    <div class="col-lg-4">
+
+      <!-- STATS -->
+      <div class="cv-section mb-4">
+        <div class="section-label"><i class="bi bi-activity"></i> En números</div>
+        <div class="row g-2">
+          <div class="col-6"><div class="stat-box"><div class="stat-val">9+</div><div class="stat-lbl">Años exp.</div></div></div>
+          <div class="col-6"><div class="stat-box"><div class="stat-val">14</div><div class="stat-lbl">CTF ganados</div></div></div>
+          <div class="col-6"><div class="stat-box"><div class="stat-val">4</div><div class="stat-lbl">CVEs publs.</div></div></div>
+          <div class="col-6"><div class="stat-box"><div class="stat-val">80+</div><div class="stat-lbl">Auditorías</div></div></div>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="cv-section mb-4">
+        <div class="section-label"><i class="bi bi-cpu-fill"></i> Skills</div>
+
+        <div class="skill-group-title">Ofensiva</div>
+        <div>
+          <span class="skill-pill">Exploit Dev</span>
+          <span class="skill-pill">Buffer Overflow</span>
+          <span class="skill-pill">Privilege Escalation</span>
+          <span class="skill-pill">Lateral Movement</span>
+          <span class="skill-pill">Social Engineering</span>
+          <span class="skill-pill">Phishing Avanzado</span>
+        </div>
+
+        <div class="skill-group-title mt-3">Herramientas</div>
+        <div>
+          <span class="skill-pill">Metasploit</span>
+          <span class="skill-pill">Burp Suite Pro</span>
+          <span class="skill-pill">Cobalt Strike</span>
+          <span class="skill-pill">Ghidra</span>
+          <span class="skill-pill">Nmap / Masscan</span>
+          <span class="skill-pill">Wireshark</span>
+          <span class="skill-pill">BloodHound</span>
+        </div>
+
+        <div class="skill-group-title mt-3">Dev & Scripting</div>
+        <div>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">Rust</span>
+          <span class="skill-pill">C / C++</span>
+          <span class="skill-pill">Bash</span>
+          <span class="skill-pill">PowerShell</span>
+          <span class="skill-pill">Go</span>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="cv-section mb-4">
+        <div class="section-label"><i class="bi bi-mortarboard-fill"></i> Educación</div>
+
+        <div class="edu-item">
+          <div class="edu-degree">M.Sc. Seguridad Informática</div>
+          <div class="edu-school">Universidad Técnica de Tallin (TalTech)</div>
+          <div class="edu-year">2013 — 2015</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">B.Sc. Ingeniería de Sistemas</div>
+          <div class="edu-school">Universidad Estatal de Moscú</div>
+          <div class="edu-year">2009 — 2013</div>
+        </div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="cv-section">
+        <div class="section-label"><i class="bi bi-translate"></i> Idiomas</div>
+
+        <div class="mb-2">
+          <div class="d-flex justify-content-between">
+            <span class="lang-name">Ruso</span><span class="lang-level">Nativo</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:100%"></div></div>
+        </div>
+
+        <div class="mb-2">
+          <div class="d-flex justify-content-between">
+            <span class="lang-name">Inglés</span><span class="lang-level">C2 — Proficient</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:95%"></div></div>
+        </div>
+
+        <div class="mb-2">
+          <div class="d-flex justify-content-between">
+            <span class="lang-name">Alemán</span><span class="lang-level">B2 — Upper Intermediate</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:65%"></div></div>
+        </div>
+
+        <div>
+          <div class="d-flex justify-content-between">
+            <span class="lang-name">Estonio</span><span class="lang-level">A2 — Básico</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:30%"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="cv-footer">
+    <span style="color:var(--accent)">></span> CV generado en 2025 · Todos los datos son ficticios
+    <span style="color:var(--accent)">_</span>
+  </div>
+
+</div>
+
+<!-- Bootstrap 5.3.8 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
